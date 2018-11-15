@@ -1,0 +1,23 @@
+{
+  "name": "wmp-dev-cli",
+  "version": "0.0.1",
+  "description": "A CLI tool for wechat miniprogram development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TonyHey/wmp-dev-cli.git"
+  },
+  "keywords": [
+    "wechat",
+    "miniprogram"
+  ],
+  "author": "tony he",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TonyHey/wmp-dev-cli/issues"
+  },
+  "homepage": "https://github.com/TonyHey/wmp-dev-cli#readme"
+}
