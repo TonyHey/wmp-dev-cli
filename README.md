@@ -1,12 +1,5 @@
 # Wechat MiniProgram CLI
 ## quick start
-### npx
-
-```
-npx wmp-cli [options]
-```
-
-[npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) 需npm 5.2+或更高版本
 
 ### npm
 
