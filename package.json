@@ -1,6 +1,6 @@
 {
   "name": "wmp-cli",
-  "version": "00.00.001",
+  "version": "00.00.002",
   "description": "A CLI tool for wechat miniprogram development",
   "main": "index.js",
   "bin": {

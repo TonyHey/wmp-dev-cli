@@ -6,11 +6,8 @@ const { spawn, spawnSync, execSync } = require("child_process")
 // only for macbook right now
 const wechatDevToolCli = "/Applications/wechatwebdevtools.app/Contents/Resources/app.nw/bin/cli"
 
-const getDirDist = ({ wmpName, prefix = "", suffix = "" }) => {
+const getDirDist = ({ wmpName = "", prefix = "", suffix = "" }) => {
   const cwd = process.cwd()
-  if (!wmpName) {
-    return cwd
-  }
   return path.resolve(cwd, prefix, wmpName, suffix)
 }
 const openDevTool = (projectDir) => {

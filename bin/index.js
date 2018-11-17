@@ -17,9 +17,9 @@ const parseArgv = function() {
   const argvArr = process.argv
   for (let i = 0; i < argvArr.length; i += 1) {
     const argv = argvArr[i]
-    if (/^-[o,p,l,h]{1}$/.test(argv)) {
+    if (/^-[l,h]{1}$/.test(argv)) {
       options[argv] = true
-    } else if (/^-[n,d,env,appid,prefix,suffix]{1}$/.test(argv)) {
+    } else if (/^-[o,d,p,env,appid,prefix,suffix]{1}$/.test(argv)) {
       i += 1
       options[argv] = argvArr[i]
     }
