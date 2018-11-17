@@ -1,4 +1,3 @@
-
 const actionTypes = {
   type: "list",
   name: "action",
@@ -17,7 +16,24 @@ const uploadDesInput = {
   message: "input description fot this upload",
 }
 
+const envType = {
+  type: "list",
+  name: "env",
+  message: "choose enviornment",
+  choices: null,
+  default: "development",
+}
+const wmpType = {
+  type: "list",
+  name: "wmpType",
+  message: "choose wmp type",
+  choices: null,
+  default: "game",
+}
+
 module.exports = {
   actionTypes,
   uploadDesInput,
+  envType,
+  wmpType,
 }

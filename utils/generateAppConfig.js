@@ -14,9 +14,7 @@ const generateConfig = ({
   console.info("generate project.config.json...")
   fs.readFile(baseConfigDir, async (readFileErr, data) => {
     if (readFileErr) {
-      const errMsg = `read base.project.config.json Error: ${readFileErr}`
-      console.error(errMsg)
-      reject(errMsg)
+      reject(readFileErr)
     } else {
       const targetEnv = env || ""
       const dataString = data.toString()
@@ -37,9 +35,7 @@ const generateConfig = ({
         configJsonStr,
         (writeFileErr) => {
           if (writeFileErr) {
-            const errMsg = `${configDist} writting Error: ${writeFileErr}`
-            console.error(errMsg)
-            reject(errMsg)
+            reject(writeFileErr)
           } else {
             console.info(`generate ${configDist} Success`)
             resolve()
