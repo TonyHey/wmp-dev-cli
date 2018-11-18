@@ -154,7 +154,9 @@ const devTool = async () => {
     },
     "envAppIds": { //配置小程序appId， key可以是wmpType值或者envType值
       "production": "wxxxxxxxxxxxxxxxxx",
-      "development": "wxxxxxxxxxxxxxxxxx"
+      "development": "wxxxxxxxxxxxxxxxxx",
+      "game": "wxxxxxxxxxxxxxxxxx",
+      "news": "wxxxxxxxxxxxxxxxxx"
     },
     "envTypes": [ // 配置envType
       "development",
@@ -162,7 +164,7 @@ const devTool = async () => {
     ],
     "wmpTypes": [ //配置小程序类类型（同项目根目录文件夹名称）
       "game",
-      'news'
+      "news"
     ]
   }
 ------------------------------------------------------------------------------

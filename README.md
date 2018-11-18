@@ -44,7 +44,9 @@ wmp [options]
   },
   "envAppIds": { //配置小程序appId， key可以是wmpType值或者envType值
     "production": "wxxxxxxxxxxxxxxxxx",
-    "development": "wxxxxxxxxxxxxxxxxx"
+    "development": "wxxxxxxxxxxxxxxxxx",
+    "game": "wxxxxxxxxxxxxxxxxx",
+    "news": "wxxxxxxxxxxxxxxxxx"
   },
   "envTypes": [ // 配置envType
     "development",
