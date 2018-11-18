@@ -36,8 +36,10 @@ wmp [options]
 ```
 
 推荐！推荐！无参数run `wmp`👇👇👇
+
 配置[project.config.json](https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html)
-或者创建如下的配置文件`wmp.config.json`（多项目时比较方便)
+
+或者,创建如下的配置文件`wmp.config.json`（多项目时比较方便)
 ```
 {
   "dirPrefix": {
