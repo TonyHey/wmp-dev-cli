@@ -1,3 +1,3 @@
-const devTool = require("./lib/cli")
+const devTool = require("./bin/cli")
 
 devTool()

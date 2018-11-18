@@ -1,7 +1,6 @@
 node_modules/
 .git/
 README-EN.md
-config/
 utils/
 lib/
 ./*.js
