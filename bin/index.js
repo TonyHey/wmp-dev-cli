@@ -62,8 +62,6 @@ const devTool = async () => {
     dirPrefix,
     dirSuffix,
   } = configJson
-  const prefix = options["-prefix"] || dirPrefix
-  const suffix = options["-suffix"] || dirSuffix
   let projectDir = process.cwd()
 
   if (!actionType) {
@@ -78,36 +76,33 @@ const devTool = async () => {
         .prompt([wmpType])
         .then(a => a.wmpType)
     }
+    if (!env && envTypes) {
+      envType.choices = envTypes
+      env = await inquirer
+        .prompt([envType])
+        .then(a => a.env)
+    }
+
+    const prefix = options["-prefix"] || (dirPrefix && dirPrefix[wmpName])
+    const suffix = options["-suffix"] || (dirSuffix && dirSuffix[wmpName])
 
     projectDir = getDirDist({ wmpName, prefix, suffix })
     await new Promise((resolve, reject) => {
-      fs.readFile(`${projectDir}/project.config.json`, async (err) => {
-        if (err) {
-          if (!env && envTypes) {
-            envType.choices = envTypes
-            env = await inquirer
-              .prompt([envType])
-              .then(a => a.env)
-          }
-          if (!appid && envAppIds) {
-            appid = envAppIds[wmpName] || envAppIds[env]
-          }
-          if (!wmpName) {
-            const errMsg = 'Error: Please enter wmpName!!!'
-            reject(errMsg)
-          } else if (!appid) {
-            const errMsg = 'Error: Please enter appid!!!'
-            reject(errMsg)
-          } else {
-            generateConfig({
-              wmpName,
-              env,
-              appid,
-              projectDir,
-              resolve,
-              reject,
-            })
-          }
+      fs.readFile(`${projectDir}/project.config.json`, async (err, data) => {
+        if (!appid && envAppIds) {
+          appid = envAppIds[wmpName] || envAppIds[env]
+        }
+        if (!wmpName || !appid) {
+          resolve()
+        } else if (err || (JSON.parse(data.toString())).appid !== appid) {
+          generateConfig({
+            wmpName,
+            env,
+            appid,
+            projectDir,
+            resolve,
+            reject,
+          })
         } else {
           resolve()
         }
@@ -145,10 +140,18 @@ const devTool = async () => {
   [-prefix dirPath] 项目目录前缀
   [-suffix dirPath] 项目目录后缀
 
-  推荐！创建如下的配置文件'wmp.config.json', 无参数run 'wmp' 'npx wmp-cli'
+  推荐！无参数run 'wmp'👇👇👇
+  配置[project.config.json](https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html)
+  或者创建如下的配置文件'wmp.config.json'（多项目时比较方便)
   {
-    "dirPrefix": "",
-    "dirPrefix": "",
+    "dirPrefix": {
+      "production": "",
+      "development": ""
+    },
+    "dirPrefix": {
+      "production": "",
+      "development": ""
+    },
     "envAppIds": { //配置小程序appId， key可以是wmpType值或者envType值
       "production": "wxxxxxxxxxxxxxxxxx",
       "development": "wxxxxxxxxxxxxxxxxx"
