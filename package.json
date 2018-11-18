@@ -1,14 +1,15 @@
 {
   "name": "wmp-cli",
-  "version": "00.00.052",
+  "version": "00.00.59",
   "description": "A CLI tool for Wechat MiniProgram development",
   "main": "index.js",
   "bin": {
-    "wmp": "./bin/index.js",
-    "wmp-cli": "./bin/index.js"
+    "wmp": "./bin/wmp.js",
+    "wmp-cli": "./bin/wmp.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,14 @@
   "dependencies": {
     "inquirer": "^6.2.0",
     "moment": "^2.22.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
   }
 }
