@@ -1,6 +1,6 @@
 {
   "name": "wmp-cli",
-  "version": "00.00.66",
+  "version": "00.00.77",
   "description": "A CLI tool for Wechat MiniProgram development",
   "main": "./bin/cli.js",
   "bin": {
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js --progress"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/TonyHey/wmp-dev-cli#readme",
   "dependencies": {
+    "concat-stream": "^1.6.2",
+    "duplexer2": "^0.1.4",
     "inquirer": "^6.2.0",
     "moment": "^2.22.2"
   },

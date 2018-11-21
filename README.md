@@ -11,14 +11,14 @@ npx wmp-cli [options]
 ### npm
 
 ```
-npm i wmp-cli --save-dev
+npm i -g wmp-cli
 wmp [options]
 ```
 
 ### Yarn
 
 ```
-yarn add wmp-cli --dev
+yarn global add wmp-cli
 wmp [options]
 ```
 
@@ -35,11 +35,11 @@ wmp [options]
 [-suffix dirPath] 项目目录后缀
 ```
 
-推荐！推荐！无参数run `wmp`👇👇👇
+添加配置文件～无参数run `wmp`👇👇👇
 
 配置[project.config.json](https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html)
 
-或者,创建如下的配置文件`wmp.config.json`（多项目时比较方便)
+或者,创建如下文件`wmp.config.json`（多项目时比较方便)
 ```
 {
   "dirPrefix": {
@@ -68,4 +68,3 @@ wmp [options]
 ```
 
 ## issue
-* 微信小程序开发者工具v1.02.18250 有一个坑，偶尔会莫名其妙报一个`runtimeAttr`的错，可以原地按⬆️键-回车键再尝试一次就ok
