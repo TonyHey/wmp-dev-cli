@@ -27,8 +27,15 @@ module.exports = {
         test: /\.jsx?$/,
         use: [{
           loader: "babel-loader",
+          options: {
+            presets: [
+              "env",
+              "stage-0",
+            ]
+          }
         }],
         exclude: /node_modules/,
+        include: `${__dirname}lib`,
       }
     ]
   },

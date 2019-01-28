@@ -1,6 +1,6 @@
 {
   "name": "wmp-cli",
-  "version": "00.00.77",
+  "version": "00.00.79",
   "description": "A CLI tool for Wechat MiniProgram development",
   "main": "./bin/cli.js",
   "bin": {
@@ -26,8 +26,6 @@
   },
   "homepage": "https://github.com/TonyHey/wmp-dev-cli#readme",
   "dependencies": {
-    "concat-stream": "^1.6.2",
-    "duplexer2": "^0.1.4",
     "inquirer": "^6.2.0",
     "moment": "^2.22.2"
   },
